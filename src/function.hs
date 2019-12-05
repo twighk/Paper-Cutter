@@ -36,8 +36,10 @@ pageheight = 210 --mm
 
 function :: (Double,Double) -> Double
 function (x,y)
-	| sqrt (x^^2 + y^^2) == 0 = 1
-	| otherwise = sin (sqrt(x^^2 + y^^2)) / sqrt (x^^2 + y^^2)
+	= x + y
+	where
+		r = sqrt $ x^^2 + y^^2
+		t = atan2 y x 
 
 main :: IO()
 main = do
